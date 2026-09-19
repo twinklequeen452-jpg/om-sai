@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Account — OM SAI Interiors & Construction</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="dashboard">
+
+<header id="site-header" class="site-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="breadcrumb"><a href="index.html">Home</a> / My Account</span>
+    <span class="eyebrow" style="margin-top:14px;display:inline-flex">Your OM SAI account</span>
+    <h1 id="dash-heading">My Account</h1>
+    <p>Everything about your services, quotations, bills and payments — in one place.</p>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="container">
+    <div class="panel" id="profile-panel">
+      <div class="panel-head">
+        <div>
+          <span class="eyebrow">Profile</span>
+          <h3 style="margin-top:8px" id="profile-name">—</h3>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <tr><th style="width:160px">Email</th><td id="profile-email">—</td></tr>
+          <tr><th>Phone</th><td id="profile-phone">—</td></tr>
+          <tr><th>Customer since</th><td id="profile-since">—</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid grid-4" style="margin:32px 0">
+      <a href="book-services.html" class="card" style="text-align:center;padding:26px 16px">
+        <div style="font-size:1.8rem">📅</div>
+        <h4 style="margin-top:10px">Book a Service</h4>
+      </a>
+      <a href="quotations.html" class="card" style="text-align:center;padding:26px 16px">
+        <div style="font-size:1.8rem">📝</div>
+        <h4 style="margin-top:10px">Request a Quotation</h4>
+      </a>
+      <a href="bills-invoices.html" class="card" style="text-align:center;padding:26px 16px">
+        <div style="font-size:1.8rem">🧾</div>
+        <h4 style="margin-top:10px">Bills &amp; Invoices</h4>
+      </a>
+      <a href="payments.html" class="card" style="text-align:center;padding:26px 16px">
+        <div style="font-size:1.8rem">💳</div>
+        <h4 style="margin-top:10px">Payments</h4>
+      </a>
+    </div>
+
+    <div class="grid grid-2" style="gap:24px">
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Recent bookings</h3>
+          <a href="book-services.html" style="font-size:.85rem;font-weight:600;color:var(--brass-deep)">View all →</a>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Service</th><th>Date</th><th>Status</th></tr></thead>
+            <tbody id="recent-bookings"></tbody>
+          </table>
+        </div>
+        <div class="empty-state" id="bookings-empty" style="display:none">No bookings yet.</div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Recent quotations</h3>
+          <a href="quotations.html" style="font-size:.85rem;font-weight:600;color:var(--brass-deep)">View all →</a>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Service</th><th>Status</th></tr></thead>
+            <tbody id="recent-quotations"></tbody>
+          </table>
+        </div>
+        <div class="empty-state" id="quotations-empty" style="display:none">No quotation requests yet.</div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Recent invoices</h3>
+          <a href="bills-invoices.html" style="font-size:.85rem;font-weight:600;color:var(--brass-deep)">View all →</a>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Invoice</th><th>Total</th><th>Status</th></tr></thead>
+            <tbody id="recent-invoices"></tbody>
+          </table>
+        </div>
+        <div class="empty-state" id="invoices-empty" style="display:none">No invoices yet.</div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Recent payments</h3>
+          <a href="payments.html" style="font-size:.85rem;font-weight:600;color:var(--brass-deep)">View all →</a>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Method</th><th>Amount</th><th>Status</th></tr></thead>
+            <tbody id="recent-payments"></tbody>
+          </table>
+        </div>
+        <div class="empty-state" id="payments-empty" style="display:none">No payments yet.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer" class="site-footer"></footer>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

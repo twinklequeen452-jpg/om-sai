@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Services — OM SAI Interiors & Construction</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="book">
+
+<header id="site-header" class="site-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="breadcrumb"><a href="index.html">Home</a> / Book Services</span>
+    <span class="eyebrow" style="margin-top:14px;display:inline-flex">Schedule work</span>
+    <h1>Book a Service</h1>
+    <p>Tell us what you need and when — our team confirms availability within a working day.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container grid grid-2" style="align-items:flex-start;gap:48px">
+    <div class="form-card">
+      <div class="form-msg" id="booking-msg"></div>
+      <form id="booking-form">
+        <div class="form-row">
+          <div class="form-group"><label for="bk-name">Full name</label><input class="form-control" id="bk-name" required></div>
+          <div class="form-group"><label for="bk-phone">Phone number</label><input class="form-control" id="bk-phone" type="tel" required></div>
+        </div>
+        <div class="form-group"><label for="bk-address">Service address</label><textarea class="form-control" id="bk-address" required placeholder="Flat / house no., street, area, city, PIN"></textarea></div>
+        <div class="form-row">
+          <div class="form-group"><label for="bk-category">Service category</label><select class="form-control" id="bk-category" required></select></div>
+          <div class="form-group"><label for="bk-subservice">Sub-service</label><select class="form-control" id="bk-subservice" required disabled></select></div>
+        </div>
+        <div class="form-group"><label for="bk-date">Preferred date</label><input class="form-control" id="bk-date" type="date" required></div>
+        <div class="form-group"><label for="bk-notes">Notes (optional)</label><textarea class="form-control" id="bk-notes" placeholder="Anything our team should know before the site visit"></textarea></div>
+        <button class="btn btn-primary btn-block" type="submit">Submit booking request</button>
+      </form>
+    </div>
+    <div>
+      <h3>Your bookings</h3>
+      <div class="tick-rule" style="margin-bottom:20px"></div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>ID</th><th>Service</th><th>Preferred date</th><th>Status</th><th>Booked on</th></tr></thead>
+          <tbody id="booking-history-body"></tbody>
+        </table>
+      </div>
+      <div class="empty-state" id="booking-history-empty" style="display:none">No bookings yet — submit your first request.</div>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer" class="site-footer"></footer>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/services-data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/booking.js"></script>
+</body>
+</html>

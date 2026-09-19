@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — OM SAI Interiors & Construction</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="contact">
+
+<header id="site-header" class="site-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="breadcrumb"><a href="index.html">Home</a> / Contact Us</span>
+    <span class="eyebrow" style="margin-top:14px;display:inline-flex">Get in touch</span>
+    <h1>Contact Us</h1>
+    <p>Questions before you book? Send us a message or reach out directly.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container grid grid-2" style="align-items:flex-start;gap:48px">
+    <div class="form-card">
+      <div class="form-msg" id="contact-msg"></div>
+      <form id="contact-form">
+        <div class="form-row">
+          <div class="form-group"><label for="ct-name">Full name</label><input class="form-control" id="ct-name" required></div>
+          <div class="form-group"><label for="ct-phone">Phone number</label><input class="form-control" id="ct-phone" type="tel" required></div>
+        </div>
+        <div class="form-group"><label for="ct-email">Email</label><input class="form-control" id="ct-email" type="email" required></div>
+        <div class="form-group"><label for="ct-message">Message</label><textarea class="form-control" id="ct-message" required placeholder="Tell us a bit about what you need"></textarea></div>
+        <button class="btn btn-primary btn-block" type="submit">Send message</button>
+      </form>
+    </div>
+    <div>
+      <ul class="contact-info">
+        <li><span class="ico">TEL</span> <span id="ct-info-phone"></span></li>
+        <li><span class="ico">MAIL</span> <span id="ct-info-email"></span></li>
+        <li><span class="ico">ADDR</span> OM SAI Interiors &amp; Construction, Vidyaranyapura MS palya , Bengaluru, Karnataka 560102</li>
+        <li><span class="ico">MS palya</span> Mon–Sat, 9:00 AM – 7:00 PM</li>
+      </ul>
+      <a class="btn btn-outline" id="ct-whatsapp" target="_blank" rel="noopener" style="margin-bottom:24px">Chat on WhatsApp</a>
+      <iframe class="map-embed" title="OM SAI location map" loading="lazy"
+        src="https://www.google.com/maps?q=HSR%20Layout%2C%20Bengaluru&output=embed"></iframe>
+      <div class="footer-social" style="margin-top:20px">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="YouTube">YT</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer" class="site-footer"></footer>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/contact.js"></script>
+<script>
+  document.getElementById("ct-info-phone").textContent = OMSAI_CONFIG.SUPPORT_PHONE;
+  document.getElementById("ct-info-email").textContent = OMSAI_CONFIG.SUPPORT_EMAIL;
+  document.getElementById("ct-whatsapp").href = `https://wa.me/${OMSAI_CONFIG.WHATSAPP_NUMBER}`;
+</script>
+</body>
+</html>

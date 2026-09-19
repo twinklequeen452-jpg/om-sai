@@ -1,0 +1,28 @@
+/* Mobile nav + fine responsive tuning */
+@media (max-width: 860px){
+  .nav-toggle{ display:flex; }
+  .nav-links{
+    position:fixed; top:70px; left:0; right:0; bottom:0;
+    background:var(--ivory); flex-direction:column; align-items:flex-start;
+    padding:28px 24px; gap:20px; transform:translateX(-100%);
+    transition:transform .25s ease; z-index:199; overflow-y:auto;
+  }
+  .nav-links.open{ transform:translateX(0); }
+  .nav-links a{ font-size:1.05rem; }
+  .nav-actions{ margin-top:8px; }
+  .hero-content{ padding:44px 0 52px; }
+  .form-row{ grid-template-columns:1fr; }
+  .auth-card .form-card{ padding:26px; }
+}
+
+@media (max-width: 640px){
+  .section{ padding:56px 0; }
+  .grid-3,.grid-4,.grid-2{ grid-template-columns:1fr; }
+  .footer-grid{ grid-template-columns:1fr; gap:28px; }
+  .stat-grid{ grid-template-columns:1fr 1fr; }
+  .dash-main{ padding:20px; }
+  .form-card{ padding:24px; }
+  .hero{ min-height:86vh; }
+  .page-hero h1{ font-size:1.9rem; }
+  .footer-bottom{ flex-direction:column; }
+}

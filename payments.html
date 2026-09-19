@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payments — OM SAI Interiors & Construction</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="payments">
+
+<header id="site-header" class="site-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="breadcrumb"><a href="index.html">Home</a> / Payments</span>
+    <span class="eyebrow" style="margin-top:14px;display:inline-flex">Pay securely</span>
+    <h1>Payments</h1>
+    <p>We accept UPI-based payments only — scan, pay, then submit your transaction ID for verification.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container grid grid-2" style="align-items:flex-start;gap:48px">
+    <div>
+      <div class="panel" style="text-align:center">
+        <span class="eyebrow">Scan to pay</span>
+        <div style="display:flex;justify-content:center;margin:18px 0">
+          <img src="assets/img/payment-qr.png" alt="OM SAI PhonePe / UPI payment QR code" style="width:240px;height:240px;object-fit:contain;border:1px solid var(--stone-line);border-radius:var(--radius);background:var(--white);padding:10px">
+        </div>
+        <p style="color:#5A5140;font-size:.88rem">Scan with PhonePe, Google Pay, Paytm or any UPI app.</p>
+      </div>
+      <div class="panel">
+        <span class="eyebrow">Accepted payment methods</span>
+        <div class="pay-methods" style="margin-top:14px">
+          <button type="button" class="pay-method" data-method="UPI">UPI</button>
+          <button type="button" class="pay-method" data-method="Google Pay">Google Pay</button>
+          <button type="button" class="pay-method" data-method="PhonePe">PhonePe</button>
+          <button type="button" class="pay-method" data-method="Paytm">Paytm</button>
+          <button type="button" class="pay-method" data-method="Net Banking">Net Banking</button>
+        </div>
+        <p class="hint">We do not accept debit or credit card payments.</p>
+      </div>
+      <div>
+        <h3>Payment history</h3>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>ID</th><th>Method</th><th>Amount</th><th>Txn ID</th><th>Status</th><th>Date</th></tr></thead>
+            <tbody id="payment-history-body"></tbody>
+          </table>
+        </div>
+        <div class="empty-state" id="payment-history-empty" style="display:none">No payments submitted yet.</div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h3 style="margin-bottom:4px">Submit payment details</h3>
+      <p class="hint" style="margin-bottom:18px">After paying via the QR code above, fill this form so we can verify and mark it paid.</p>
+      <div class="form-msg" id="payment-msg"></div>
+      <form id="payment-form">
+        <div class="form-group">
+          <label for="pay-invoice">Pay against invoice (optional)</label>
+          <select class="form-control" id="pay-invoice"></select>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="pay-amount">Amount paid (₹)</label><input class="form-control" id="pay-amount" type="number" min="1" required></div>
+          <div class="form-group"><label for="pay-txn">Transaction / UTR ID</label><input class="form-control" id="pay-txn" required></div>
+        </div>
+        <div class="form-group">
+          <label for="pay-screenshot">Payment screenshot</label>
+          <input class="form-control" id="pay-screenshot" type="file" accept="image/*">
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Submit payment for verification</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer" class="site-footer"></footer>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/payments.js"></script>
+</body>
+</html>

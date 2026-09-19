@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — OM SAI Interiors & Construction</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="admin">
+
+<header id="site-header" class="site-header"></header>
+
+<div class="dash-shell">
+  <aside class="dash-side">
+    <div class="brand" style="color:var(--white)">OM SAI <span style="color:var(--brass-light)">Admin</span></div>
+    <h4>Overview</h4>
+    <nav class="dash-nav">
+      <a href="#" class="dash-tab active" data-tab="analytics">📊 Analytics</a>
+    </nav>
+    <h4>Operations</h4>
+    <nav class="dash-nav">
+      <a href="#" class="dash-tab" data-tab="bookings">📅 Bookings</a>
+      <a href="#" class="dash-tab" data-tab="quotations">📝 Quotations</a>
+      <a href="#" class="dash-tab" data-tab="invoices">🧾 Invoices</a>
+      <a href="#" class="dash-tab" data-tab="payments">💳 Payments</a>
+    </nav>
+    <h4>Catalogue</h4>
+    <nav class="dash-nav">
+      <a href="#" class="dash-tab" data-tab="services">🛠️ Services</a>
+      <a href="#" class="dash-tab" data-tab="gallery">🖼️ Gallery</a>
+    </nav>
+    <h4>People</h4>
+    <nav class="dash-nav">
+      <a href="#" class="dash-tab" data-tab="users">👤 Users</a>
+    </nav>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-head">
+      <div>
+        <span class="eyebrow">Owner control panel</span>
+        <h1 style="margin-top:8px;font-size:1.9rem">Welcome, <span id="admin-username">Admin</span></h1>
+      </div>
+    </div>
+
+    <div class="dash-tabs" id="mobile-tabs">
+      <span class="dash-tab active" data-tab="analytics">Analytics</span>
+      <span class="dash-tab" data-tab="users">Users</span>
+      <span class="dash-tab" data-tab="bookings">Bookings</span>
+      <span class="dash-tab" data-tab="services">Services</span>
+      <span class="dash-tab" data-tab="payments">Payments</span>
+      <span class="dash-tab" data-tab="quotations">Quotations</span>
+      <span class="dash-tab" data-tab="invoices">Invoices</span>
+      <span class="dash-tab" data-tab="gallery">Gallery</span>
+    </div>
+
+    <section id="panel-analytics" class="dash-panel"></section>
+
+    <section id="panel-users" class="dash-panel" style="display:none">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Role</th><th>Joined</th><th></th></tr></thead>
+          <tbody id="users-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="panel-bookings" class="dash-panel" style="display:none">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>ID</th><th>Customer</th><th>Service</th><th>Date</th><th>Status</th><th>Update</th></tr></thead>
+          <tbody id="bookings-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="panel-services" class="dash-panel" style="display:none">
+      <div class="panel-head" style="margin-bottom:18px">
+        <h3>Service categories</h3>
+        <button class="btn btn-primary btn-sm" id="add-category-btn">+ Add category</button>
+      </div>
+      <div id="services-admin-wrap"></div>
+    </section>
+
+    <section id="panel-payments" class="dash-panel" style="display:none">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>ID</th><th>Customer</th><th>Method</th><th>Amount</th><th>Txn ID</th><th>Screenshot</th><th>Status</th><th>Action</th></tr></thead>
+          <tbody id="payments-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="panel-quotations" class="dash-panel" style="display:none">
+      <div id="quotations-admin-wrap"></div>
+    </section>
+
+    <section id="panel-invoices" class="dash-panel" style="display:none">
+      <div id="invoices-admin-wrap"></div>
+    </section>
+
+    <section id="panel-gallery" class="dash-panel" style="display:none">
+      <div id="gallery-admin-wrap"></div>
+    </section>
+  </main>
+</div>
+
+<div class="modal-overlay" id="admin-modal">
+  <div class="modal">
+    <button class="modal-close" id="admin-modal-close" type="button">×</button>
+    <div id="admin-modal-body"></div>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/admin.js"></script>
+<script>
+  // Mirror the sidebar tabs on the compact mobile tab-strip.
+  document.querySelectorAll("#mobile-tabs .dash-tab").forEach((el) => {
+    el.addEventListener("click", () => {
+      document.querySelector(`.dash-nav a[data-tab="${el.dataset.tab}"]`)?.click();
+      document.querySelectorAll("#mobile-tabs .dash-tab").forEach((t) => t.classList.remove("active"));
+      el.classList.add("active");
+    });
+  });
+</script>
+</body>
+</html>
